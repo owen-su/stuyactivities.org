@@ -1,0 +1,16 @@
+{
+	schemaVersion: 1,
+	dockerfileLines: [
+		"FROM node:8.7.0-alpine",
+		"RUN mkdir -p /src/app",
+		"WORKDIR /src/app",
+		"COPY ./src/package.json /src/app/",
+		"RUN npm install",
+		"COPY ./src /src/app",
+		"RUN npm run build",
+		"EXPOSE 80",
+		"FROM socialengine/nginx-spa:latest",
+		"COPY ./build /app",
+		"RUN chmod -R 777 /app",
+	],
+}
