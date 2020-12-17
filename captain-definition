@@ -1,6 +1,6 @@
 {
-	schemaVersion: 1,
-	dockerfileLines: [
+	"schemaVersion": 1,
+	"dockerfileLines": [
 		"FROM node:8.7.0-alpine",
 		"RUN mkdir -p /src/app",
 		"WORKDIR /src/app",
